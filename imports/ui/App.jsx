@@ -1,6 +1,5 @@
-import React, { Fragment } from 'react'
-import Fields from './Fields'
-import SymbolButtons from './Symbols'
+import React from 'react'
+
 
 class App extends React.Component {
     state = {
@@ -9,17 +8,11 @@ class App extends React.Component {
         operator: ''
       }
 
-  handleType = (e) =>{
-    this.setState({
-      current: this.state.current + e.target.attributes.getNamedItem('data-filter').value
-    });
-  }
-
   calculate = () => {
-    const total = parseInt(this.state.total);
-    const current = parseInt(this.state.current);
-    const sign = this.state.operator;
-    switch(sign){
+    const total = parseInt(this.state.total)
+    const current = parseInt(this.state.current)
+    const { operator } = this.state
+    switch(operator){
        case "-":
         return total - current;
           break;
@@ -37,7 +30,7 @@ class App extends React.Component {
      }
   };
 
-  getAction = e =>{
+  getAction = e => {
     const operator = e.target.name
     const { current } = this.state
     this.setState({
@@ -47,7 +40,7 @@ class App extends React.Component {
     });
   }
 
-  getResult = () => {
+  getAnswer = () => {
     this.setState({
        total: this.calculate(),
        current: ''
@@ -60,7 +53,7 @@ class App extends React.Component {
     })
   }
   
-  cancel = () => {
+  clear = () => {
      this.setState({
         total: '',
         current: '',
@@ -99,9 +92,8 @@ class App extends React.Component {
               <button name="/" onClick ={this.getAction}  >/</button>
           </div>
           <div className='row'>
-           <button>save</button>
-              <button onClick={this.cancel}>cancel</button>
-              <button onClick={this.getResult}>=</button>
+              <button onClick={this.clear}>cancel</button>
+              <button onClick={this.getAnswer}>=</button>
           </div> 
 
       </div>
