@@ -1,5 +1,23 @@
 .numButtons {
   background-color: antiquewhite;
-  height: 30px;
-  width: 30px;
+  height: 100px;
+  width: 140px;
+  margin-left: 14px;
+  margin-bottom: 15px;
+}
+.symbButton {
+  background-color:rgb(221, 239, 221);
+  height: 100px;
+  width: 140px;
+  margin-left: 14px;
+  margin-bottom: 15px;
+}
+h2 {
+  text-align: center;
+}
+
+.numButtons:hover, .symbButton:hover {
+  background-color: teal;
+  font-size: 30px;
+  color: #ffffff;
 }

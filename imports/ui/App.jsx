@@ -13,15 +13,15 @@ class App extends React.Component {
     const { operator } = this.state
     switch(operator){
        case "-":
-        return total - current;
+        return total - current
        case "+":
-          return  total + current;
+          return  total + current
        case "*":
-          return  total * current;
+          return  total * current
        case "/":
-          return  total / current;
+          return  total / current
        default:
-          return 0;
+          return 0
      }
   };
 
@@ -59,6 +59,7 @@ class App extends React.Component {
     const { total, current } = this.state
     return (
       <div className="Calculator text-center">
+      <h2>Simple Calculator</h2>
           <div className="row">
               <button className='numButtons' name='1' onClick={ this.getNumber }>1</button>
               <button className='numButtons' name='2' onClick={ this.getNumber }>2</button>
@@ -74,18 +75,18 @@ class App extends React.Component {
           <div className="row">
               <button className='numButtons' name='9' onClick={ this.getNumber }>9</button>
               <button className='numButtons' name='0' onClick={ this.getNumber }>0</button>
+              <button className='numButtons' onClick={this.clear}>cancel</button>
+              <button className='numButtons' onClick={this.getAnswer}>=</button>
           </div>
+          <br/>
           <div className="row">
-          <button name="+" onClick ={this.getAction} >+</button>
-              <button name="-" onClick ={this.getAction}  >-</button>
-              <button name="*" onClick ={this.getAction}  >*</button>
-              <button name="/" onClick ={this.getAction}  >/</button>
+              <button className='symbButton' name="+" onClick ={this.getAction} >+</button>
+              <button className='symbButton' name="-" onClick ={this.getAction}  >-</button>
+              <button className='symbButton' name="*" onClick ={this.getAction}  >*</button>
+              <button className='symbButton' name="/" onClick ={this.getAction}  >/</button>
           </div>
-          <div className='row'>
-              <button onClick={this.clear}>cancel</button>
-              <button onClick={this.getAnswer}>=</button>
-          </div> 
-          <h5>Count: {current}</h5>
+          <br/>
+          <h2>Count: {current}</h2>
           <h2>Answer: {total} </h2>
       </div>
     );
