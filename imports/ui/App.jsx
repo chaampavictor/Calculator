@@ -37,10 +37,11 @@ class App extends React.Component {
      }
   };
 
-  handleAction = (e) =>{
-    const operator = e.target.attributes.getNamedItem('data-filter').value;
+  getAction = e =>{
+    const operator = e.target.name
+    const { current } = this.state
     this.setState({
-       total: this.state.current,
+       total: current,
        current: '',
        operator: operator
     });
@@ -92,10 +93,10 @@ class App extends React.Component {
               <button name='0' onClick={ this.getNumber }>0</button>
           </div>
           <div className="row">
-          <button data-filter="+" onClick ={this.handleAction} >+</button>
-              <button data-filter="-" onClick ={this.handleAction}  >-</button>
-              <button data-filter="*" onClick ={this.handleAction}  >*</button>
-              <button data-filter="/" onClick ={this.handleAction}  >/</button>
+          <button name="+" onClick ={this.getAction} >+</button>
+              <button name="-" onClick ={this.getAction}  >-</button>
+              <button name="*" onClick ={this.getAction}  >*</button>
+              <button name="/" onClick ={this.getAction}  >/</button>
           </div>
           <div className='row'>
            <button>save</button>
