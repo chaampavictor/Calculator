@@ -52,8 +52,11 @@ class App extends React.Component {
        current: ''
     });
   }
-  getNumber = (e) => {
-    console.log(e.target.name);
+  getNumber = e => {
+    const { current } = this.state
+    this.setState({
+      current: current + e.target.name
+    })
   }
   
   cancel = () => {
@@ -72,31 +75,33 @@ class App extends React.Component {
           <h2>Result: {total} </h2>
           <div className="row">
               <button name='1' onClick={ this.getNumber }>1</button>
-              <button name='2' onClick={ this.getNumber }>1</button>
-              <button name='3' onClick={ this.getNumber }>1</button>
-              <button name='4' onClick={ this.getNumber }>1</button>
+              <button name='2' onClick={ this.getNumber }>2</button>
+              <button name='3' onClick={ this.getNumber }>3</button>
+              <button name='4' onClick={ this.getNumber }>4</button>
               
           </div>
           <div className="row">
-              <button data-filter="4" onClick={this.handleType}>4</button>
-              <button data-filter="5" onClick={this.handleType}>5</button>
-              <button data-filter="6" onClick={this.handleType}>6</button>
-              <button data-filter="-" onClick ={this.handleAction}  >-</button>
+              <button name='5' onClick={ this.getNumber }>5</button>
+              <button name='6' onClick={ this.getNumber }>6</button>
+              <button name='7' onClick={ this.getNumber }>7</button>
+              <button name='8' onClick={ this.getNumber }>8</button>
+             
           </div>
           <div className="row">
-              <button data-filter="1" onClick={this.handleType}>1</button>
-              <button data-filter="2" onClick={this.handleType}>2</button>
-              <button data-filter="3" onClick={this.handleType}>3</button>
-              <button data-filter="*" onClick ={this.handleAction}  >*</button>
-              <button data-filter="/" onClick ={this.handleAction}  >/</button>
+              <button name='9' onClick={ this.getNumber }>9</button>
+              <button name='0' onClick={ this.getNumber }>0</button>
           </div>
           <div className="row">
           <button data-filter="+" onClick ={this.handleAction} >+</button>
-              <button data-filter="0" onClick={this.handleType}>0</button>
-              <button>save</button>
+              <button data-filter="-" onClick ={this.handleAction}  >-</button>
+              <button data-filter="*" onClick ={this.handleAction}  >*</button>
+              <button data-filter="/" onClick ={this.handleAction}  >/</button>
+          </div>
+          <div className='row'>
+           <button>save</button>
               <button onClick={this.cancel}>cancel</button>
               <button onClick={this.getResult}>=</button>
-          </div>
+          </div> 
 
       </div>
     );
