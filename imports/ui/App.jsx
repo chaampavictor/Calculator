@@ -60,20 +60,20 @@ class App extends React.Component {
     return (
       <div className="Calculator text-center">
           <div className="row">
-              <button name='1' onClick={ this.getNumber }>1</button>
-              <button name='2' onClick={ this.getNumber }>2</button>
-              <button name='3' onClick={ this.getNumber }>3</button>
-              <button name='4' onClick={ this.getNumber }>4</button>
+              <button className='numButtons' name='1' onClick={ this.getNumber }>1</button>
+              <button className='numButtons' name='2' onClick={ this.getNumber }>2</button>
+              <button className='numButtons' name='3' onClick={ this.getNumber }>3</button>
+              <button className='numButtons' name='4' onClick={ this.getNumber }>4</button>
           </div>
           <div className="row">
-              <button name='5' onClick={ this.getNumber }>5</button>
-              <button name='6' onClick={ this.getNumber }>6</button>
-              <button name='7' onClick={ this.getNumber }>7</button>
-              <button name='8' onClick={ this.getNumber }>8</button>
+              <button className='numButtons' name='5' onClick={ this.getNumber }>5</button>
+              <button className='numButtons' name='6' onClick={ this.getNumber }>6</button>
+              <button className='numButtons' name='7' onClick={ this.getNumber }>7</button>
+              <button className='numButtons' name='8' onClick={ this.getNumber }>8</button>
           </div>
           <div className="row">
-              <button name='9' onClick={ this.getNumber }>9</button>
-              <button name='0' onClick={ this.getNumber }>0</button>
+              <button className='numButtons' name='9' onClick={ this.getNumber }>9</button>
+              <button className='numButtons' name='0' onClick={ this.getNumber }>0</button>
           </div>
           <div className="row">
           <button name="+" onClick ={this.getAction} >+</button>
