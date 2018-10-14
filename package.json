@@ -1,5 +1,5 @@
 {
-  "name": "rest-endpoint",
+  "name": "calculator",
   "private": true,
   "scripts": {
     "start": "meteor run",
